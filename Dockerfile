@@ -1,5 +1,6 @@
 FROM jenkins
 USER root
 RUN usermod -l ec2-user jenkins
-RUN apt-get update && apt-get install -y git
+RUN usermod -u 500 ec2-user
+RUN groupmod -g 500 ec2-user
 USER ec2-user
